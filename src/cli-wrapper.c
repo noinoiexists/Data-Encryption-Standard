@@ -6,7 +6,7 @@
 
 uint64_t str_to_uint64(const char* str) {
     uint64_t result = 0;
-    for (int i = 0; i < 8 && i <strlen(str); i++) {
+    for (int i = 0; i < 8 && i < (int)strlen(str); i++) {
         result = (result << 8) | (uint8_t)str[i];
     }
     return result;
