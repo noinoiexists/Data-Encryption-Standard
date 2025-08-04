@@ -6,7 +6,12 @@
 
 uint64_t str_to_uint64(const char* str) {
     uint64_t result = 0;
-    for (int i = 0; i < 8 && i < (int)strlen(str); i++) {
+    int len = strlen(str);
+    if(len != 8) {
+    	fprintf(stderr, "Input should be 8 characters\n");
+    	exit(1);
+    }
+    for (int i = 0; i < len; i++) {
         result = (result << 8) | (uint8_t)str[i];
     }
     return result;
@@ -16,9 +21,9 @@ int main() {
     char key_str[9];   
     char block_str[9]; 
     printf("Key:\n");
-    scanf("%8s", key_str);
+    scanf("%s", key_str);
     printf("Block:\n");
-    scanf("%8s", block_str);
+    scanf("%s", block_str);
     
     uint64_t key = str_to_uint64(key_str);
     uint64_t block = str_to_uint64(block_str);
