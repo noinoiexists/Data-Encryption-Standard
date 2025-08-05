@@ -7,7 +7,7 @@ Due to advances in cryptanalysis, DES is now considered insecure. It has largely
 This repository contains an implementation of DES that strictly follows the official specification.
 
 ## Usage
-This repository contains the core DES algorithm in the file `src/des.c` and also includes a minimal cli-wrapper for testing that supports single-block encryption.  
+This repository contains the core DES algorithm in the file `src/des.c` and also includes a minimal cli-wrapper `src/cli-wrapper.c` for testing.
 Follow these steps to try it:
 - Clone the repository and move in:
   ```sh
@@ -22,19 +22,21 @@ The tool can be run using `./des-minimal`.
 #### Example
 ```
 $ ./des-minimal
-Key:
-icebergs
 Plaintext:
-vacation
+This is DES
+Key (8 bytes):
+icebergs
 Ciphertext (hex):
-F7BDB5339002C42B
+3664b0e63f4f9cae4c00467abcdc9275
 ```
 
 ## To-do
 
 - [x] Core Data Encryption Standard Algorithm
-- [ ] Multi-block Encryption/Decryption using ECB, CBC modes
-- [ ] PKCS#5/7 Padding
+- [x] PKCS#5/7 Padding
+- [x] Multi-block Encryption using Electronic Code Book (ECB) mode
+- [ ] Cipher Block Chain (CBC) mode
+- [ ] Decryption
 - [ ] Enhanced command-line interface
 
 ## Licence
