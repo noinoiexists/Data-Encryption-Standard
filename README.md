@@ -15,7 +15,7 @@ Follow these steps to try it:
   ```
 - Compile the code:
   ```sh
-  gcc src/cli-wrapper.c src/des.c -o des-minimal -Wall -Wextra
+  gcc src/des.c src/cli-wrapper.c src/operation-modes.c -o des-minimal -Wall -Wextra
   ```
 The tool can be run using `./des-minimal`.
 
@@ -26,16 +26,22 @@ Plaintext:
 This is DES
 Key (8 bytes):
 icebergs
+Mode (1=CBC, 2=ECB):
+1
+IV (8 bytes, optional):
+vacation
 Ciphertext (hex):
-3664b0e63f4f9cae4c00467abcdc9275
+d7fb39281da198897db700ff60be9ebd
 ```
+
 
 ## To-do
 
 - [x] Core Data Encryption Standard Algorithm
 - [x] PKCS#5/7 Padding
-- [x] Multi-block Encryption using Electronic Code Book (ECB) mode
-- [ ] Cipher Block Chain (CBC) mode
+- [x] Multi-block Encryption
+  - [x] Electronic Code Book (ECB) mode 
+  - [x] Cipher Block Chain (CBC) mode
 - [ ] Decryption
 - [ ] Enhanced command-line interface
 
