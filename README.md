@@ -24,12 +24,16 @@ The tool can be run using `./des-minimal`.
 $ ./des-minimal
 Plaintext:
 This is DES
+
 Key (8 bytes):
 icebergs
+
 Mode (1=CBC, 2=ECB):
 1
+
 IV (8 bytes, optional):
 vacation
+
 Ciphertext (hex):
 d7fb39281da198897db700ff60be9ebd
 ```
